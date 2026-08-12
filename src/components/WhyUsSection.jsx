@@ -24,7 +24,7 @@ export default function WhyUsSection({ onOpenAudit }) {
   });
 
   return (
-    <section id="why-us" style={{ padding: '96px 0', background: 'var(--bg-body)', transition: 'background 0.3s' }}>
+    <section id="why-us" className="py-16 md:py-24" style={{ background: 'var(--bg-body)', transition: 'background 0.3s' }}>
       <div className="site-container">
         <div className="grid-split-wide">
           {/* Left — slide from left */}

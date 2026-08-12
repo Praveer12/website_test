@@ -7,7 +7,7 @@ export default function Hero({ onOpenAudit }) {
   const [gridRef, gridVisible] = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section style={{ position: 'relative', paddingTop: 160, paddingBottom: 60, overflow: 'hidden' }}>
+    <section className="pt-32 pb-16 md:pt-40 md:pb-16" style={{ position: 'relative', overflow: 'hidden' }}>
       <div className="bg-gradient-glow" />
       <div className="grid-bg" style={{ position: 'absolute', inset: 0, opacity: 0.4, pointerEvents: 'none' }} />
 

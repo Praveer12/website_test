@@ -14,7 +14,7 @@ export default function BlogSection() {
   ];
 
   return (
-    <section id="blog" style={{ padding: '96px 0', background: 'var(--bg-body)', transition: 'background 0.3s' }}>
+    <section id="blog" className="py-16 md:py-24" style={{ background: 'var(--bg-body)', transition: 'background 0.3s' }}>
       <div className="site-container">
         {/* Header — rotate reveal */}
         <div
@@ -30,7 +30,7 @@ export default function BlogSection() {
         </div>
 
         {/* Blog Cards — staggered blur reveal */}
-        <div ref={gridRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 32 }}>
+        <div ref={gridRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: 32 }}>
           {posts.map((post, idx) => (
             <div
               key={post.id}

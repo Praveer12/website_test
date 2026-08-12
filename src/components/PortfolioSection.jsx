@@ -21,7 +21,7 @@ export default function PortfolioSection({ onOpenAudit }) {
   const filters = [{ id: 'all', label: 'All' }, { id: 'webdev', label: 'Web Dev' }, { id: 'seo', label: 'SEO' }, { id: 'ecommerce', label: 'E-Commerce' }];
 
   return (
-    <section id="work" style={{ padding: '96px 0', background: 'var(--bg-section-alt)', transition: 'background 0.3s' }}>
+    <section id="work" className="py-16 md:py-24" style={{ background: 'var(--bg-section-alt)', transition: 'background 0.3s' }}>
       <div className="site-container">
         {/* Header — shrink reveal */}
         <div ref={headerRef} className={`reveal-shrink ${headerVisible ? 'is-visible' : ''}`} style={{ marginBottom: 48 }}>
@@ -42,7 +42,7 @@ export default function PortfolioSection({ onOpenAudit }) {
         </div>
 
         {/* Portfolio Grid — staggered rotate reveal */}
-        <div ref={gridRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: 32 }}>
+        <div ref={gridRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: 32 }}>
           {filtered.map((p, idx) => (
             <div
               key={p.id}

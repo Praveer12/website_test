@@ -15,7 +15,7 @@ export default function AnalyticsSection() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} style={{ padding: '120px 0', background: 'var(--bg-body)', position: 'relative', overflow: 'hidden' }}>
+    <section id="analytics" className="py-16 md:py-24" ref={sectionRef} style={{ background: 'var(--bg-section-alt)', transition: 'background 0.3s', position: 'relative', overflow: 'hidden' }}>
       
       {/* Background ambient glow */}
       <div style={{
@@ -25,7 +25,7 @@ export default function AnalyticsSection() {
       }} />
 
       <div className="site-container" style={{ position: 'relative', zIndex: 10 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 64, alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 64, alignItems: 'center' }}>
           
           {/* Left Text Content */}
           <div className={`reveal-up ${isVisible ? 'is-visible' : ''}`}>

@@ -27,7 +27,7 @@ export default function CapabilitiesSection({ onOpenAudit }) {
   const filtered = activeCategory === 'all' ? services : services.filter(s => s.category === activeCategory);
 
   return (
-    <section id="capabilities" style={{ padding: '96px 0', background: 'var(--bg-section-alt)', transition: 'background 0.3s' }}>
+    <section id="capabilities" className="py-16 md:py-24" style={{ background: 'var(--bg-section-alt)', transition: 'background 0.3s' }}>
       <div className="site-container">
         {/* Header — blur reveal */}
         <div
@@ -54,7 +54,7 @@ export default function CapabilitiesSection({ onOpenAudit }) {
         </div>
 
         {/* Services Grid — staggered scale reveal */}
-        <div ref={gridRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: 24 }}>
+        <div ref={gridRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 270px), 1fr))', gap: 24 }}>
           {filtered.map((s, idx) => {
             const Icon = s.icon;
             return (

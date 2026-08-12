@@ -13,7 +13,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" style={{ padding: '96px 0', background: 'var(--bg-body)', transition: 'background 0.3s' }}>
+    <section id="about" className="py-16 md:py-24" style={{ background: 'var(--bg-body)', transition: 'background 0.3s' }}>
       <div className="site-container">
         {/* Header — slide from left + right */}
         <div ref={headerRef} className="grid-split" style={{ marginBottom: 64 }}>
@@ -34,7 +34,7 @@ export default function AboutSection() {
         </div>
 
         {/* 3 Pillar Cards — staggered flip reveal */}
-        <div ref={cardsRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32 }}>
+        <div ref={cardsRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 32 }}>
           {pillars.map((p, idx) => {
             const Icon = p.icon;
             return (
