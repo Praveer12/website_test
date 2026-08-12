@@ -54,7 +54,7 @@ export default function Header({ onOpenAudit, theme, setTheme }) {
             <span style={{ fontSize: 20, fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text-heading)', fontFamily: 'var(--font-heading)' }}>
               Atrangi<span style={{ color: 'var(--primary)' }}>Home</span>
             </span>
-            <span style={{ fontSize: 10, color: 'var(--text-muted)', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>
+            <span className="hidden sm:block" style={{ fontSize: 10, color: 'var(--text-muted)', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>
               Global Web & Digital Agency
             </span>
           </div>
