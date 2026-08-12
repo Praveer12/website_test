@@ -4,7 +4,7 @@ import { MessageSquare, X, Send } from 'lucide-react';
 export default function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [customMsg, setCustomMsg] = useState('');
-  const phone = '919876543210';
+  const phone = '918447135270';
   const presets = ['Hi! I want a website development quote.', 'Hi! I need SEO services.', 'I want a free digital audit.'];
 
   const handleSend = (text) => {

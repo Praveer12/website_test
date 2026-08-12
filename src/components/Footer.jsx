@@ -85,7 +85,7 @@ export default function Footer({ onOpenAudit }) {
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--text-heading)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}>
                 <Mail style={{ width: 16, height: 16, color: 'var(--primary)' }} /> atrangihome@gmail.com
               </a>
-              <a href="tel:+919876543210" style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13, color: 'var(--text-muted)', transition: 'color 0.2s' }}
+              <a href="tel:+918447135270" style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13, color: 'var(--text-muted)', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--text-heading)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}>
                 <Phone style={{ width: 16, height: 16, color: 'var(--accent-cyan)' }} /> +91 (WhatsApp)
               </a>
