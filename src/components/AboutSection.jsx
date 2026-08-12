@@ -1,6 +1,7 @@
 import React from 'react';
 import { Target, BarChart3, Coins, ArrowRight, Check, Zap } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useAnimations';
+import GradientBlobs from './GradientBlobs';
 
 export default function AboutSection() {
   const [headerRef, headerVisible] = useScrollReveal({ threshold: 0.2 });
@@ -13,8 +14,9 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-24" style={{ background: 'var(--bg-body)', transition: 'background 0.3s' }}>
-      <div className="site-container">
+    <section id="about" className="py-16 md:py-24" style={{ background: 'var(--bg-body)', transition: 'background 0.3s', position: 'relative', overflow: 'hidden' }}>
+      <GradientBlobs />
+      <div className="site-container" style={{ position: 'relative', zIndex: 2 }}>
         {/* Header — slide from left + right */}
         <div ref={headerRef} className="grid-split" style={{ marginBottom: 64 }}>
           <div className={`reveal-left ${headerVisible ? 'is-visible' : ''}`} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
