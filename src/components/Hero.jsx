@@ -10,7 +10,7 @@ function AnimatedHeadline({ text, visible }) {
   useEffect(() => {
     if (!visible || hasAnimated.current) return;
     hasAnimated.current = true;
-    
+
     let i = 0;
     const interval = setInterval(() => {
       if (i <= text.length) {
@@ -83,7 +83,6 @@ export default function Hero({ onOpenAudit }) {
             fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em',
           }}>
             <Sparkles style={{ width: 14, height: 14, color: 'var(--accent-cyan)' }} />
-            <span>India-Based · Serving US, UK, CA & AU</span>
           </div>
 
           {/* Heading */}
