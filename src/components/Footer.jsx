@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, ShieldCheck, Globe, Camera, MessageCircle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useAnimations';
 
 export default function Footer({ onOpenAudit }) {
@@ -10,25 +10,46 @@ export default function Footer({ onOpenAudit }) {
 
   const handleSubscribe = (e) => { e.preventDefault(); if (email) setSubscribed(true); };
 
+  const socialLinks = [
+    { icon: Globe, label: 'LinkedIn', href: '#' },
+    { icon: Camera, label: 'Instagram', href: '#' },
+    { icon: MessageCircle, label: 'Twitter / X', href: '#' },
+  ];
+
   return (
-    <footer id="contact" style={{ background: 'var(--bg-section-alt)', color: 'var(--text-muted)', paddingTop: 80, paddingBottom: 48, borderTop: '1px solid var(--border-main)', transition: 'background 0.3s' }}>
-      <div className="site-container">
-        {/* CTA Banner — scale reveal */}
-        <div
-          ref={ctaRef}
-          className={`glass-card reveal-scale ${ctaVisible ? 'is-visible' : ''}`}
-          style={{ padding: '32px 48px', borderRadius: 24, marginBottom: 64, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 32, background: 'var(--bg-card)' }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--accent-cyan)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Ready to Scale?</span>
-            <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 2.2rem)', fontWeight: 800, color: 'var(--text-heading)', fontFamily: 'var(--font-heading)' }}>Let's build your next digital masterpiece.</h3>
-            <p style={{ fontSize: 13, color: 'var(--text-body)' }}>Get your free SEO & technical audit within 24 hours.</p>
-          </div>
-          <button onClick={onOpenAudit} className="btn-primary" style={{ padding: '14px 32px', fontSize: 14, flexShrink: 0 }}>
-            Get Free Proposal <ArrowRight style={{ width: 16, height: 16 }} />
+    <footer id="contact" style={{ background: 'var(--bg-section-alt)', color: 'var(--text-muted)', paddingTop: 0, paddingBottom: 48, borderTop: '1px solid var(--border-main)', transition: 'background 0.3s' }}>
+      
+      {/* Large Typographic CTA */}
+      <div
+        ref={ctaRef}
+        className={`reveal-scale ${ctaVisible ? 'is-visible' : ''}`}
+        style={{ padding: 'clamp(48px, 8vw, 96px) 0', textAlign: 'center', borderBottom: '1px solid var(--border-main)' }}
+      >
+        <div className="site-container">
+          <div style={{
+            fontSize: 11, fontWeight: 700, color: 'var(--accent-cyan)',
+            textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 16,
+          }}>Ready to Scale?</div>
+          <h2 style={{
+            fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: 900,
+            color: 'var(--text-heading)', fontFamily: 'var(--font-heading)',
+            lineHeight: 1.05, letterSpacing: '-0.04em', marginBottom: 24,
+            textWrap: 'balance',
+          }}>
+            Let's build something{' '}
+            <span className="gradient-accent">extraordinary</span>
+            {' '}together.
+          </h2>
+          <p style={{ fontSize: 16, color: 'var(--text-body)', maxWidth: 520, margin: '0 auto 32px', lineHeight: 1.7 }}>
+            Get your free SEO & technical audit within 24 hours. No commitments, no hidden fees.
+          </p>
+          <button onClick={onOpenAudit} className="btn-primary" style={{ padding: '16px 36px', fontSize: 15 }}>
+            Get Free Proposal <ArrowRight style={{ width: 18, height: 18 }} />
           </button>
         </div>
+      </div>
 
+      <div className="site-container" style={{ paddingTop: 64 }}>
         {/* Columns — staggered fade up */}
         <div ref={colsRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, paddingBottom: 64, borderBottom: '1px solid var(--border-main)' }}>
           {/* Brand */}
@@ -40,7 +61,27 @@ export default function Footer({ onOpenAudit }) {
               <span style={{ fontSize: 24, fontWeight: 800, color: 'var(--text-heading)', fontFamily: 'var(--font-heading)' }}>Atrangi<span style={{ color: 'var(--primary)' }}>Home</span></span>
             </a>
             <p style={{ fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: 360 }}>India's trusted website development & digital marketing agency serving global brands across the US, UK, Canada, and Australia.</p>
-            <div>
+            
+            {/* Social Icons */}
+            <div style={{ display: 'flex', gap: 12, marginTop: 4 }}>
+              {socialLinks.map((s, i) => {
+                const Icon = s.icon;
+                return (
+                  <a key={i} href={s.href} aria-label={s.label} style={{
+                    width: 40, height: 40, borderRadius: 12,
+                    background: 'var(--bg-subtle)', border: '1px solid var(--border-main)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: 'var(--text-muted)', transition: 'all 0.2s',
+                  }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = 'var(--primary)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-subtle)'; e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.borderColor = 'var(--border-main)'; }}>
+                    <Icon style={{ width: 18, height: 18 }} />
+                  </a>
+                );
+              })}
+            </div>
+
+            <div style={{ marginTop: 8 }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-heading)', marginBottom: 8 }}>Subscribe to Growth Insights</div>
               {!subscribed ? (
                 <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: 8, maxWidth: 360 }}>
@@ -87,7 +128,7 @@ export default function Footer({ onOpenAudit }) {
               </a>
               <a href="tel:+918447135270" style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13, color: 'var(--text-muted)', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'var(--text-heading)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}>
-                <Phone style={{ width: 16, height: 16, color: 'var(--accent-cyan)' }} /> +91 (WhatsApp)
+                <Phone style={{ width: 16, height: 16, color: 'var(--accent-cyan)' }} /> +91 8447135270
               </a>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 13 }}>
                 <MapPin style={{ width: 16, height: 16, color: 'var(--accent-amber)', flexShrink: 0, marginTop: 2 }} /> India | Serving US, UK, CA & AU
