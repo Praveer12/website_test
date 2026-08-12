@@ -76,15 +76,6 @@ export default function Hero({ onOpenAudit }) {
           className={`reveal-up ${heroVisible ? 'is-visible' : ''}`}
           style={{ textAlign: 'center', maxWidth: 800, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}
         >
-          {/* Tag */}
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 18px', borderRadius: 9999,
-            background: 'var(--tag-bg)', border: '1px solid var(--tag-border)', color: 'var(--tag-text)',
-            fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em',
-          }}>
-            <Sparkles style={{ width: 14, height: 14, color: 'var(--accent-cyan)' }} />
-          </div>
-
           {/* Heading */}
           <h1 style={{
             fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', fontWeight: 800,
