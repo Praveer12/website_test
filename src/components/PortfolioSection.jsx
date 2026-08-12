@@ -52,7 +52,7 @@ export default function PortfolioSection({ onOpenAudit }) {
               <div style={{ position: 'relative', height: 220, overflow: 'hidden' }}>
                 <img src={p.image} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
                   onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.08)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--bg-card), transparent)' }} />
+
                 <div style={{ position: 'absolute', top: 16, left: 16, padding: '4px 14px', borderRadius: 9999, background: 'var(--primary)', color: '#fff', fontSize: 12, fontWeight: 700 }}>{p.stats}</div>
               </div>
               <div style={{ padding: 24, flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
